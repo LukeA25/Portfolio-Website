@@ -1,0 +1,98 @@
+{
+  "algoblock": {
+    "name": "AlgoBlock",
+    "description": "Yada yada yap yap Yada yada yap yap Yada yada yap yap Yada yada yap yap Yada yada yap yap Yada yada yap yap Yada yada yap yap Yada yada yap yap ",
+    "media": [
+      {
+        "type": "video",
+        "fileName": "AlgoBlockVideo"
+      },
+      { "type": "image", "fileName": "1" },
+      { "type": "image", "fileName": "2" },
+      { "type": "image", "fileName": "3" }
+    ],
+    "link": "https://algoblock.net",
+    "skills": [
+      "Web Development",
+      "JavaScript",
+      "Stock Trading",
+      "Entreprenuership"
+    ],
+    "date": "April-July 2023"
+  },
+  "spider_robot": {
+    "name": "Spider Robot",
+    "description": "Yada yada yap yap Yada yada yap yap Yada yada yap yap Yada yada yap yap Yada yada yap yap Yada yada yap yap Yada yada yap yap Yada yada yap yap ",
+    "media": [
+      {
+        "type": "video",
+        "fileName": "Spider Robot"
+      },
+      { "type": "image", "fileName": "1" },
+      { "type": "image", "fileName": "2" },
+      { "type": "image", "fileName": "3" }
+    ],
+    "skills": ["3D Printing", "3D Modeling", "Arduino", "C++"],
+    "date": "August 2023"
+  },
+  "computer_vision_workout": {
+    "name": "Computer Vision Workout",
+    "description": "Yada yada yap yap Yada yada yap yap Yada yada yap yap Yada yada yap yap Yada yada yap yap Yada yada yap yap Yada yada yap yap Yada yada yap yap ",
+    "media": [
+      {
+        "type": "video",
+        "fileName": "CV Video"
+      },
+      { "type": "image", "fileName": "1" },
+      { "type": "image", "fileName": "2" },
+      { "type": "image", "fileName": "3" }
+    ],
+    "skills": ["Machine Learning", "Python", "Computer Vision"],
+    "date": "October 2023"
+  },
+  "svp_demo": {
+    "name": "SVP Demo",
+    "description": "Yada yada yap yap Yada yada yap yap Yada yada yap yap Yada yada yap yap Yada yada yap yap Yada yada yap yap Yada yada yap yap Yada yada yap yap ",
+    "media": [
+      {
+        "type": "video",
+        "fileName": "SVP Demo Video"
+      },
+      { "type": "image", "fileName": "1" },
+      { "type": "image", "fileName": "2" },
+      { "type": "image", "fileName": "3" }
+    ],
+    "skills": ["Web Development", "JavaScript", "Generative AI"],
+    "date": "August-September 2023"
+  },
+  "i.d.e.a._vr_demo": {
+    "name": "I.D.E.A. VR Demo",
+    "description": "Yada yada yap yap Yada yada yap yap Yada yada yap yap Yada yada yap yap Yada yada yap yap Yada yada yap yap Yada yada yap yap Yada yada yap yap ",
+    "media": [
+      {
+        "type": "video",
+        "fileName": "IDEA VR Video"
+      },
+      { "type": "image", "fileName": "1" },
+      { "type": "image", "fileName": "2" },
+      { "type": "image", "fileName": "3" }
+    ],
+    "skills": ["3D Printing", "Coding", "VS Code", "GitHub", "Finance"],
+    "date": "January-February 2022"
+  },
+  "slaughterhouse_5_game": {
+    "name": "Slaughterhouse 5 Game",
+    "description": "Yada yada yap yap Yada yada yap yap Yada yada yap yap Yada yada yap yap Yada yada yap yap Yada yada yap yap Yada yada yap yap Yada yada yap yap ",
+    "media": [
+      {
+        "type": "video",
+        "fileName": "Slaughterhouse 5 Video"
+      },
+      { "type": "image", "fileName": "1" },
+      { "type": "image", "fileName": "2" },
+      { "type": "image", "fileName": "3" }
+    ],
+    "skills": ["3D Printing", "Coding", "VS Code", "GitHub", "Finance"],
+    "date": "May 2023"
+  }
+}
