@@ -8,7 +8,11 @@ import {
 } from "react-icons/bs";
 import { FiExternalLink } from "react-icons/fi";
 import ReactPlayer from "react-player/file";
-import { AiFillGithub, AiOutlineArrowLeft } from "react-icons/ai";
+import {
+  AiFillGithub,
+  AiOutlineArrowLeft,
+  AiOutlineFile,
+} from "react-icons/ai";
 import { HashLink } from "react-router-hash-link";
 
 function Project() {
@@ -16,9 +20,10 @@ function Project() {
   const [projectData, setProjectData] = useState({});
   const [mediaData, setMediaData] = useState([]);
   const [mediaIndex, setMediaIndex] = useState(0);
+  const [pdf, setPdf] = useState("");
 
   const next = () => {
-    if (mediaIndex == projectData.media.length - 1) {
+    if (mediaIndex == 3) {
       setMediaIndex(0);
     } else {
       setMediaIndex(mediaIndex + 1);
@@ -27,7 +32,7 @@ function Project() {
 
   const previous = async () => {
     if (mediaIndex == 0) {
-      setMediaIndex(projectData.media.length - 1);
+      setMediaIndex(3);
     } else {
       setMediaIndex(mediaIndex - 1);
     }
@@ -35,6 +40,7 @@ function Project() {
 
   useEffect(() => {
     setProjectData(projects[projectName]);
+    document.title = projects[projectName].name;
 
     const getMediaData = async () => {
       const allMedia = [];
@@ -47,12 +53,19 @@ function Project() {
               return video.default;
             })
           );
-        } else {
+        } else if (projects[projectName].media[i].type === "image") {
           allMedia.push(
             await import(
               `../assets/${projectName}/${projects[projectName].media[i].fileName}.png`
             ).then((image) => image.default)
           );
+        } else {
+          await import(
+            `../assets/${projectName}/${projects[projectName].media[i].fileName}.pdf`
+          ).then((image) => {
+            console.log(image.default);
+            setPdf(image.default);
+          });
         }
       }
 
@@ -115,39 +128,41 @@ function Project() {
                   <BsArrowLeft color="white" />
                 </button>
                 <div className="flex gap-4 sm:gap-8 items-center">
-                  {projectData.media.map((media, index) => (
-                    <button
-                      onClick={() => setMediaIndex(index)}
-                      className="relative"
-                    >
-                      {media.type === "video" ? (
-                        <>
-                          <video
-                            src={mediaData[index]}
-                            className={`h-8 sm:h-16 aspect-video rounded-md object-cover ${
-                              mediaIndex == index && "border-2 border-white"
-                            }`}
-                          />
-                          {mediaIndex != index && (
-                            <div className="absolute bg-black/50 rounded-md top-0 left-0 w-full h-full" />
-                          )}
-                          <BsFillPlayCircleFill className="w-4 h-4 sm:w-6 sm:h-6 text-white absolute top-[calc(50%-.5rem)] left-[calc(50%-.5rem)] sm:top-[calc(50%-.75rem)] sm:left-[calc(50%-.75rem)]" />
-                        </>
-                      ) : (
-                        <>
-                          <img
-                            src={mediaData[index]}
-                            className={`h-8 sm:h-16 aspect-video rounded-md object-cover ${
-                              mediaIndex == index && "border-2 border-white"
-                            }`}
-                          />
-                          {mediaIndex != index && (
-                            <div className="absolute bg-black/50 rounded-md top-0 left-0 w-full h-full" />
-                          )}
-                        </>
-                      )}
-                    </button>
-                  ))}
+                  {projectData.media
+                    .filter((allMedia) => allMedia.type !== "pdf")
+                    .map((media, index) => (
+                      <button
+                        onClick={() => setMediaIndex(index)}
+                        className="relative"
+                      >
+                        {media.type === "video" ? (
+                          <>
+                            <video
+                              src={mediaData[index]}
+                              className={`h-8 sm:h-16 aspect-video rounded-md object-cover ${
+                                mediaIndex == index && "border-2 border-white"
+                              }`}
+                            />
+                            {mediaIndex != index && (
+                              <div className="absolute bg-black/50 rounded-md top-0 left-0 w-full h-full" />
+                            )}
+                            <BsFillPlayCircleFill className="w-4 h-4 sm:w-6 sm:h-6 text-white absolute top-[calc(50%-.5rem)] left-[calc(50%-.5rem)] sm:top-[calc(50%-.75rem)] sm:left-[calc(50%-.75rem)]" />
+                          </>
+                        ) : (
+                          <>
+                            <img
+                              src={mediaData[index]}
+                              className={`h-8 sm:h-16 aspect-video rounded-md object-cover ${
+                                mediaIndex == index && "border-2 border-white"
+                              }`}
+                            />
+                            {mediaIndex != index && (
+                              <div className="absolute bg-black/50 rounded-md top-0 left-0 w-full h-full" />
+                            )}
+                          </>
+                        )}
+                      </button>
+                    ))}
                 </div>
                 <button
                   onClick={next}
@@ -179,7 +194,7 @@ function Project() {
             )}
             <h1 className="mb-3">{projectData.name}</h1>
             <hr className="border-theme-red" />
-            <p className="text-gray-300 mt-4">{projectData.description}</p>
+            <p className="text-gray-300 mt-4 whitespace-pre-line">{projectData.description}</p>
             <h3 className="text-white font-medium text-xl sm:text-2xl mt-4 mb-2">
               Skills Showcased
             </h3>
@@ -188,25 +203,38 @@ function Project() {
                 <li key={skill}>{skill}</li>
               ))}
             </ul>
-            <div className="flex justify-center items-center">
-              <a
-                href="https://github.com/LukeA25/AlgoBlock/tree/main"
-                target="_blank"
-                className="w-full sm:w-auto"
-              >
-                <div className="flex items-center justify-center gap-2 text-lg sm:text-2xl text-white red-button rounded-md px-8 py-2">
-                  <AiFillGithub
-                    color="white"
-                    className="text-2xl sm:text-4xl"
-                  />
-                  View Source Code
-                  <FiExternalLink
-                    color="white"
-                    className="text-2xl"
-                  />
-                </div>
-              </a>
-            </div>
+            {projectData.git && (
+              <div className="flex flex-col gap-4 justify-center items-center">
+                {pdf && (
+                  <a href={pdf} target="_blank" className="w-full sm:w-auto">
+                    <div className="flex items-center justify-center gap-2 text-lg sm:text-2xl text-white red-button rounded-md px-8 py-2">
+                      <AiOutlineFile
+                        color="white"
+                        className="text-3xl sm:text-4xl"
+                      />
+                      View DECA Manual
+                    </div>
+                  </a>
+                )}
+                <a
+                  href={projectData.git}
+                  target="_blank"
+                  className="w-full sm:w-auto"
+                >
+                  <div className="flex items-center justify-center gap-2 text-lg sm:text-2xl text-white red-button rounded-md px-8 py-2">
+                    <AiFillGithub
+                      color="white"
+                      className="text-3xl sm:text-4xl"
+                    />
+                    View Source Code
+                    <FiExternalLink
+                      color="white"
+                      className="text-lg sm:text-2xl"
+                    />
+                  </div>
+                </a>
+              </div>
+            )}
           </div>
         </div>
       </div>

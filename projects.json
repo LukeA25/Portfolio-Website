@@ -1,7 +1,7 @@
 {
   "algoblock": {
     "name": "AlgoBlock",
-    "description": "Yada yada yap yap Yada yada yap yap Yada yada yap yap Yada yada yap yap Yada yada yap yap Yada yada yap yap Yada yada yap yap Yada yada yap yap ",
+    "description": "AlgoBlock is a online company dedicated to making stock trading simpler. This allows users to use drop-down menus to create a trading strategy and converts these drop-downs into code. Users can then run that code to trade stocks automatically.",
     "media": [
       {
         "type": "video",
@@ -11,6 +11,7 @@
       { "type": "image", "fileName": "2" },
       { "type": "image", "fileName": "3" }
     ],
+    "git": "https://github.com/LukeA25/AlgoBlock/blob/main/src/pages/Home.jsx",
     "link": "https://algoblock.net",
     "skills": [
       "Web Development",
@@ -22,7 +23,7 @@
   },
   "spider_robot": {
     "name": "Spider Robot",
-    "description": "Yada yada yap yap Yada yada yap yap Yada yada yap yap Yada yada yap yap Yada yada yap yap Yada yada yap yap Yada yada yap yap Yada yada yap yap ",
+    "description": "Made up of 12 servos and 14 3D-printed parts, this mechanical spider can walk forward or backward, and turn left or right. It also has a Bluetooth chip, so it can be controlled by a laptop connected to the spider via Bluetooth.",
     "media": [
       {
         "type": "video",
@@ -32,12 +33,34 @@
       { "type": "image", "fileName": "2" },
       { "type": "image", "fileName": "3" }
     ],
+    "git": "https://github.com/LukeA25/Spider-Robot/blob/main/ArduinoSpider.ino",
     "skills": ["3D Printing", "3D Modeling", "Arduino", "C++"],
     "date": "August 2023"
   },
+  "problemstart": {
+    "name": "ProblemStart",
+    "description": "This project was my first major freelance gig. This platform connects business owners facing a problem with vendors who are offering solutions. It has payment processing, LinkedIn verification, reviews, a search engine, and a messaging system in the app.",
+    "media": [
+      {
+        "type": "video",
+        "fileName": "ProblemStart CapCut"
+      },
+      { "type": "image", "fileName": "1" },
+      { "type": "image", "fileName": "2" },
+      { "type": "image", "fileName": "3" }
+    ],
+    "link": "https://problemstart-dev.web.app/listings",
+    "skills": [
+      "Web Development",
+      "JavaScript",
+      "Payment Processing",
+      "Algolia"
+    ],
+    "date": "August-September 2023"
+  },
   "computer_vision_workout": {
     "name": "Computer Vision Workout",
-    "description": "Yada yada yap yap Yada yada yap yap Yada yada yap yap Yada yada yap yap Yada yada yap yap Yada yada yap yap Yada yada yap yap Yada yada yap yap ",
+    "description": "This project uses computer vision to track your body and count your reps for curls, push-ups, and squats. This can help ensure that you reach the appropriate depth for each rep, and count your reps for you so that you can focus on your workout.",
     "media": [
       {
         "type": "video",
@@ -47,12 +70,13 @@
       { "type": "image", "fileName": "2" },
       { "type": "image", "fileName": "3" }
     ],
+    "git": "https://github.com/LukeA25/Computer-Vision-Workout/blob/main/main.py",
     "skills": ["Machine Learning", "Python", "Computer Vision"],
     "date": "October 2023"
   },
   "svp_demo": {
     "name": "SVP Demo",
-    "description": "Yada yada yap yap Yada yada yap yap Yada yada yap yap Yada yada yap yap Yada yada yap yap Yada yada yap yap Yada yada yap yap Yada yada yap yap ",
+    "description": "For my internship at Software Velocity Partners, I was tasked with creating a website to show off their new product demo. This allows businesses to upload information about their software, and it will generate tests for the software to ensure that it is fully functional.",
     "media": [
       {
         "type": "video",
@@ -65,9 +89,26 @@
     "skills": ["Web Development", "JavaScript", "Generative AI"],
     "date": "August-September 2023"
   },
+  "envision_ar_demo": {
+    "name": "Envision AR Demo",
+    "description": "This demo is for my 3rd-place international DECA project. It uses augmented reality to help customers visualize different products, allowing customers to better understand the products before purchasing them.\n\nYou can view the 20-page DECA research paper below.",
+    "media": [
+      {
+        "type": "video",
+        "fileName": "Envision AR Demo"
+      },
+      { "type": "image", "fileName": "1" },
+      { "type": "image", "fileName": "2" },
+      { "type": "image", "fileName": "3" },
+      { "type": "pdf", "fileName": "EIB_MA_Anderson_Taylor_WE" }
+    ],
+    "git": "https://github.com/LukeA25/Envision-AR-Experience/blob/main/Assets/PlaceTrackedImages.cs",
+    "skills": ["Unity", "Game Development", "Augmented Reality"],
+    "date": "January-March 2023"
+  },
   "i.d.e.a._vr_demo": {
     "name": "I.D.E.A. VR Demo",
-    "description": "Yada yada yap yap Yada yada yap yap Yada yada yap yap Yada yada yap yap Yada yada yap yap Yada yada yap yap Yada yada yap yap Yada yada yap yap ",
+    "description": "My first DECA project was about bringing virtual reality into education. I created this demo as an example of what a student may experience with virtual reality in a classroom.\n\nYou can view the 20-page DECA research paper below.",
     "media": [
       {
         "type": "video",
@@ -75,14 +116,16 @@
       },
       { "type": "image", "fileName": "1" },
       { "type": "image", "fileName": "2" },
-      { "type": "image", "fileName": "3" }
+      { "type": "image", "fileName": "3" },
+      { "type": "pdf", "fileName": "I.D.E.A. VR States Manual" }
     ],
-    "skills": ["3D Printing", "Coding", "VS Code", "GitHub", "Finance"],
+    "git": "https://github.com/LukeA25/I.D.E.A.-VR-Experience/blob/main/Assets/PlanetRing.cs",
+    "skills": ["Unity", "Game Development", "Virtual Reality"],
     "date": "January-February 2022"
   },
   "slaughterhouse_5_game": {
     "name": "Slaughterhouse 5 Game",
-    "description": "Yada yada yap yap Yada yada yap yap Yada yada yap yap Yada yada yap yap Yada yada yap yap Yada yada yap yap Yada yada yap yap Yada yada yap yap ",
+    "description": "After reading \"Slaughterhouse 5\" by Kurt Vonnegut for my English class, I was tasked with creating a creative project for our final exam. My project was a virtual reality game, that takes the user through Billy's adventure through space and time.",
     "media": [
       {
         "type": "video",
@@ -92,7 +135,8 @@
       { "type": "image", "fileName": "2" },
       { "type": "image", "fileName": "3" }
     ],
-    "skills": ["3D Printing", "Coding", "VS Code", "GitHub", "Finance"],
+    "git": "https://github.com/LukeA25/Slaughterhouse-5-Game/blob/main/Assets/TimeManipulation.cs",
+    "skills": ["Unity", "Game Development", "Virtual Reality"],
     "date": "May 2023"
   }
 }

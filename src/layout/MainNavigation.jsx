@@ -1,8 +1,33 @@
-import { useLocation, Link } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { useLocation } from "react-router-dom";
 import { HashLink } from "react-router-hash-link";
 
 function MainNavigation(props) {
   const location = useLocation();
+  const [scroll, setScroll] = useState(0);
+  const [projectsHeight, setProjectsHeight] = useState({});
+
+  useEffect(() => {
+    if (!location.pathname.startsWith("/projects")) {
+      const updateHeights = () => {
+        setProjectsHeight(document.getElementById("projects").offsetTop);
+      };
+
+      updateHeights();
+
+      window.addEventListener("resize", updateHeights);
+      return () => window.removeEventListener("resize", updateHeights);
+    }
+  }, []);
+
+  useEffect(() => {
+    if (!location.pathname.startsWith("/projects")) {
+      const updateScroll = () => setScroll(window.scrollY);
+
+      window.addEventListener("scroll", updateScroll);
+      return () => window.removeEventListener("scroll", updateScroll);
+    }
+  }, []);
 
   return (
     <header className="fixed flex items-center z-50 justify-between px-[10vw] bg-theme-gray-500 h-20 bg-opacity-70 w-screen duration-300 border-b border-gray-400/50">
@@ -12,29 +37,41 @@ function MainNavigation(props) {
           replace
           to="/#top"
           className={`white-button h-full flex items-center border-y-4 border-y-transparent ${
-            location.pathname === "/" && "border-b-theme-red text-white"
+            location.pathname === "/" &&
+            scroll < projectsHeight &&
+            "border-b-theme-red text-white"
           }`}
         >
           Home
         </HashLink>
-        <Link
+        <HashLink
           replace
-          to="/repCounter"
+          to="/#projects"
           className={`white-button h-full flex items-center border-y-4 border-y-transparent ${
-            location.pathname === "/about" && "border-b-theme-red text-white"
-          }`}
-        >
-          About
-        </Link>
-        <Link
-          replace
-          to="/projects/algoblock"
-          className={`white-button h-full flex items-center border-y-4 border-y-transparent ${
-            location.pathname.startsWith("/projects") && "border-b-theme-red text-white"
+            location.pathname.startsWith("/projects")
+              ? "border-b-theme-red text-white"
+              : scroll >= projectsHeight &&
+                !(
+                  window.innerHeight + Math.round(window.scrollY) >=
+                  document.body.offsetHeight
+                ) &&
+                "border-b-theme-red text-white"
           }`}
         >
           Projects
-        </Link>
+        </HashLink>
+        <HashLink
+          replace
+          to="/#about"
+          className={`white-button h-full flex items-center border-y-4 border-y-transparent ${
+            location.pathname === "/" &&
+            window.innerHeight + Math.round(window.scrollY) >=
+              document.body.offsetHeight &&
+            "border-b-theme-red text-white"
+          }`}
+        >
+          About
+        </HashLink>
       </nav>
     </header>
   );

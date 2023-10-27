@@ -4,6 +4,8 @@ import { BsLinkedin } from "react-icons/bs";
 import { AiFillGithub, AiOutlineMail } from "react-icons/ai";
 
 function Home() {
+  document.title = "Home";
+
   return (
     <div className="w-screen pt-20 bg-blur-effect">
       <section
@@ -15,15 +17,16 @@ function Home() {
           <h1>Luke Anderson</h1>
           <div className="w-40 h-1 bg-theme-red mb-4" />
           <p>
-            I'm a high school student, and using
-            online resources, I have cultivated skills across many programming
-            languages. Now, I've created production-grade work for clients
-            with front-end and back-end web development.
+            I'm a senior at King Philip Regional High School, and a self-taught
+            computer developer. I am able to work in Python, C#, Java,
+            JavaScript, and various development frameworks to create
+            production-grade work for clients with front-end and back-end web
+            development.
           </p>
         </article>
         <article className="w-full sm:w-1/2 h-full flex justify-center sm:justify-end">
           <div className="bg-theme-gray-600 w-[80%] mt-[10%] aspect-square rounded-full right-0 my-auto">
-            <img src={Luke} className="w-full" />
+            <img src={Luke} className="h-full m-auto" />
           </div>
         </article>
       </section>
@@ -67,6 +70,21 @@ function Home() {
       >
         <h1>My Projects</h1>
         <ProjectGallery />
+      </section>
+
+      <section id="about" className="p-8 sm:px-32 sm:py-16">
+        <h1>About Me</h1>
+        <p>
+          Although I am still a high school student, I do not let this deter me
+          from pursuing my goal of becoming a software engineer. I have five
+          years of relevant experience in coding and computer engineering. My
+          personal website illustrates a collection of my favorite projects that
+          I created over the last two years. This sampling of websites, school
+          projects, personal projects, and my first company demonstrates my
+          versatility. My desire to learn is complimented by my relentless work
+          ethic. In addition to web development, I am a varsity athlete and am
+          seeking roles and resources which merge technology and business.
+        </p>
       </section>
     </div>
   );
