@@ -72,7 +72,7 @@ function Home() {
         <ProjectGallery />
       </section>
 
-      <section id="about" className="p-8 sm:px-32 sm:py-16">
+      <section id="about" className="p-8 sm:px-32 sm:py-16 scroll-m-20 sm:scroll-m-0">
         <h1>About Me</h1>
         <p>
           Although I am still a high school student, I do not let this deter me

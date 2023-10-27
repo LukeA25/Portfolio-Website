@@ -29,7 +29,7 @@ const projectIcons = {
 
 function ProjectContainer(props) {
   const videoRef = useRef();
-  const [videoLoading, setVideoLoading] = useState(true);
+  const [videoLoading, setVideoLoading] = useState(false);
   const iconData = projectIcons[props.category];
 
   useEffect(() => {
@@ -89,7 +89,7 @@ function ProjectContainer(props) {
             </div>
           )}
           <video
-            src={props.videoSrc}
+            src={props.videoSrc + "#t=0.001"}
             ref={videoRef}
             onLoadedData={() => setVideoLoading(false)}
             muted

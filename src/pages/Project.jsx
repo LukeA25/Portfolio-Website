@@ -138,7 +138,7 @@ function Project() {
                         {media.type === "video" ? (
                           <>
                             <video
-                              src={mediaData[index]}
+                              src={mediaData[index] + "#t=0.001"}
                               className={`h-8 sm:h-16 aspect-video rounded-md object-cover ${
                                 mediaIndex == index && "border-2 border-white"
                               }`}

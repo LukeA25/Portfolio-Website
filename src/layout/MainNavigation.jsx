@@ -5,12 +5,15 @@ import { HashLink } from "react-router-hash-link";
 function MainNavigation(props) {
   const location = useLocation();
   const [scroll, setScroll] = useState(0);
-  const [projectsHeight, setProjectsHeight] = useState({});
+  const [heights, setHeights] = useState({});
 
   useEffect(() => {
     if (!location.pathname.startsWith("/projects")) {
       const updateHeights = () => {
-        setProjectsHeight(document.getElementById("projects").offsetTop);
+        setHeights({
+          projects: document.getElementById("projects").offsetTop,
+          about: document.getElementById("about").offsetTop,
+        });
       };
 
       updateHeights();
@@ -38,7 +41,7 @@ function MainNavigation(props) {
           to="/#top"
           className={`white-button h-full flex items-center border-y-4 border-y-transparent ${
             location.pathname === "/" &&
-            scroll < projectsHeight &&
+            scroll < heights.projects &&
             "border-b-theme-red text-white"
           }`}
         >
@@ -50,10 +53,10 @@ function MainNavigation(props) {
           className={`white-button h-full flex items-center border-y-4 border-y-transparent ${
             location.pathname.startsWith("/projects")
               ? "border-b-theme-red text-white"
-              : scroll >= projectsHeight &&
+              : scroll >= heights.projects &&
                 !(
                   window.innerHeight + Math.round(window.scrollY) >=
-                  document.body.offsetHeight
+                    document.body.offsetHeight || scroll >= heights.about - 80
                 ) &&
                 "border-b-theme-red text-white"
           }`}
@@ -65,8 +68,9 @@ function MainNavigation(props) {
           to="/#about"
           className={`white-button h-full flex items-center border-y-4 border-y-transparent ${
             location.pathname === "/" &&
-            window.innerHeight + Math.round(window.scrollY) >=
-              document.body.offsetHeight &&
+            (window.innerHeight + Math.round(window.scrollY) >=
+              document.body.offsetHeight ||
+              scroll >= heights.about - 80) &&
             "border-b-theme-red text-white"
           }`}
         >
