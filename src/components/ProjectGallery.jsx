@@ -31,11 +31,11 @@ function ProjectGallery() {
         category="personalProject"
         videoSrc={CVVideo}
       />
-      <ProjectContainer
+      {/* <ProjectContainer
         name="SVP Demo"
         category="freelance"
         videoSrc={SVPVideo}
-      />
+      /> */}
       <ProjectContainer
         name="Envision AR Demo"
         category="school"

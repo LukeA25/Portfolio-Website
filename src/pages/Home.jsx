@@ -17,11 +17,11 @@ function Home() {
           <h1>Luke Anderson</h1>
           <div className="w-40 h-1 bg-theme-red mb-4" />
           <p>
-            I'm a senior at King Philip Regional High School, and a self-taught
-            computer developer. I am able to work in Python, C#, Java,
-            JavaScript, and various development frameworks to create
-            production-grade work for clients with front-end and back-end web
-            development.
+            Second-semester Computer Science student at Vanderbilt University with a passion 
+            for building intelligent, interactive systems, hoping to one day be an embedded 
+            systems developer. Self-taught developer experienced in Python, C#, Java, and 
+            JavaScript, with a track record of creating full-stack applications and working 
+            on projects at the intersection of software, hardware, and emerging tech.
           </p>
         </article>
         <article className="w-full sm:w-1/2 h-full flex justify-center sm:justify-end">
@@ -53,13 +53,13 @@ function Home() {
           </div>
         </a>
         <a
-          href="mailto:luke1chip@gmail.com"
+          href="mailto:luke.d.anderson@vanderbilt.edu"
           target="_blank"
           className="w-full sm:w-auto"
         >
           <div className="flex items-center justify-center gap-2 text-lg sm:text-2xl text-white red-button rounded-md px-8 py-2">
             <AiOutlineMail color="white" className="text-2xl sm:text-4xl" />{" "}
-            Luke1chip@gmail.com
+            Luke.d.anderson@vanderbilt.edu
           </div>
         </a>
       </div>
@@ -75,15 +75,15 @@ function Home() {
       <section id="about" className="p-8 sm:px-32 sm:py-16 scroll-m-20 sm:scroll-m-0">
         <h1>About Me</h1>
         <p>
-          Although I am still a high school student, I do not let this deter me
-          from pursuing my goal of becoming a software engineer. I have five
-          years of relevant experience in coding and computer engineering. My
-          personal website illustrates a collection of my favorite projects that
-          I created over the last two years. This sampling of websites, school
-          projects, personal projects, and my first company demonstrates my
-          versatility. My desire to learn is complimented by my relentless work
-          ethic. In addition to web development, I am a varsity athlete and am
-          seeking roles and resources which merge technology and business.
+        Although I’m now a college student, my passion for software engineering started years ago. 
+        With over five years of experience in coding and computer engineering, I’ve built a wide 
+        range of projects—from personal websites and full-stack apps to my first startup. My portfolio 
+        reflects both creative versatility and technical depth.
+
+        I’m currently studying Computer Science at Vanderbilt University, where I continue to pursue 
+        hands-on projects that blend technology, design, and business. As a former varsity athlete, 
+        I bring a strong work ethic and team mindset to everything I do. I’m always looking for opportunities 
+        that combine innovation, entrepreneurship, and impact.
         </p>
       </section>
     </div>

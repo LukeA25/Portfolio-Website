@@ -33,8 +33,8 @@ function Footer() {
           <a href="tel:+1508918759" target="_blank">
             <b className="font-semibold text-theme-red">+1 (508)-918-7569</b> or{" "}
           </a>
-          <a href="mailto:luke1chip@gmail.com" target="_blank">
-            <b className="font-semibold text-theme-red">Luke1chip@gmail.com</b>.
+          <a href="mailto:Luke.d.anderson@vanderbilt.edu" target="_blank">
+            <b className="font-semibold text-theme-red">Luke.d.anderson@vanderbilt.edu</b>.
           </a>
         </p>
         <span className="text-gray-400">Luke Anderson</span>
